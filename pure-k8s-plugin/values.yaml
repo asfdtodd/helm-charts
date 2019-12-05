@@ -10,7 +10,7 @@ image:
 # this option is to enable/disable the debug mode of this app
 # for pure-provisioner and pure-flex-daemon
 app:
-  debug: false
+  debug: true
 
 # do you want to set pure as the default storageclass?
 storageclass:
@@ -25,7 +25,7 @@ storageclass:
   # pureBackend: file
 
   pure:
-    enabled: true
+    enabled: false
     default: false
     # set the type of backend you want for the 'pure' storageclass. block/file
     pureBackend: block
@@ -36,7 +36,7 @@ storageclass:
 
   pureBlock:
     enabled: true
-    default: false
+    default: true
 
 # specify the service account name for this app
 clusterrolebinding:
@@ -50,7 +50,7 @@ flasharray:
   defaultFSOpt: "-q"
   defaultMountOpt: ""
   preemptAttachments: "true"
-  iSCSILoginTimeout: 20
+  iSCSILoginTimeout: 5
 
 flashblade:
   snapshotDirectoryEnabled: "false"
@@ -83,7 +83,7 @@ flexPath: /usr/libexec/kubernetes/kubelet-plugins/volume/exec
 #flexPath : /usr/libexec/kubernetes/kubelet-plugins/volume/exec
 
 # Default for RKE
-#flexPath: /usr/libexec/kubernetes/kubelet-plugins/volume/exec
+#flexPath: /var/lib/kubelet/volumeplugins
 
 # Default for GKE
 #flexPath: /home/kubernetes/flexvolume
